@@ -1,0 +1,46 @@
+network,R1,R2,TS,Prod1,Prod2,Prod3,ascii_name,unicode_name,Notes,A,n,ea,rxn_type,rxn_subcategory
+alpha,OOC(O)[C](C)C,,TS01,CC1(C)OC1O,OH,,aEpoxyFromb,αEpoxyFromβ,,,,,cyclic ether,epoxy
+alpha,OOC([O])C(C)C_bmk,,TS02,OOC(=O)C(C)C_bmk,H,,aHejection,αHejection,,,,,bscission,C-H
+alpha,OOC(O)C(C)[CH2]_bmk,,TS03,OC1OCC(C)1,OH,,aC4EtherFromg,αC4EtherFromγ,,,,,cyclic ether,C4
+alpha,OOC([O])C(C)C_bmk,,TS04,C[CH]C,OOC=O,,a-bscissionFromAlkoxy,α-βscissionFromAlkoxy,,,,,bscission,C-C
+alpha,OOC(O)C(C)[CH2]_bmk,,TS05,OOC(O)C=C_bmk,CH3,,a-bscissionFromg,α-βscissionFromγ,beta-scission,,,,bscission,C-C
+alpha,OOC([O])C(C)C_bmk,,TS06,O=CC(C)C,HO2,,aHO2elimFromAlkoxy,αHO2elimFromAlkoxy,,,,,HO2 elim,indirect
+alpha,[O]OC(O)C(C)C,,TS07,p07_adduct,,,aAdductFromRO2,αAdductFromRO2,,,,,HO2 elim,direct-adduct
+alpha,[O]OC(O)C(C)C,,TS08,CC(C)=CO,HO2,,aHO2elimFromRO2,αHO2elimFromRO2,,,,,HO2 elim,direct
+alpha,OOC(O)[C](C)C,,TS09,CC(C)=CO,HO2,,aHO2elimFromb,αHO2elimFromβ,,,,,HO2 elim,indirect
+alpha,[O]OC(O)C(C)C,,TS10,OOC(O)[C](C)C,,,a-bQOOHIsom,α-βQOOHIsom,,,,,H-transfer,qooh
+alpha,OOC(O)[C](C)C,,TS11,OOC([O])C(C)C_bmk,,,a-bAlkoxyIsom,αAlkoxyIsomFromβ,,,,,H-transfer,alkoxy
+alpha,[O]OC(O)C(C)C,,TS12,OOC(O)C(C)[CH2]_bmk,,,a-gQOOHIsom,α-γQOOHIsom,,,,,H-transfer,qooh
+alpha,OOC(O)C(C)[CH2]_bmk,,TS15,OOC([O])C(C)C_bmk,,,a-gAlkoxyIsom,αAlkoxyIsomFromγ,,,,,H-transfer,alkoxy
+alpha,OOC(O)C(C)[CH2]_bmk,,TS18,CC=C,OC=O,OH,aDoublebscission,αDoubleβscission,beta-scission,,,,,
+alpha,[O]OC(O)C(C)C,,TS17,OOC([O])C(C)C_bmk,,,aAlkoxyIsom,αAlkoxyIsom,,,,,,
+alpha,CC(C)[CH]O,O2,,[O]OC(O)C(C)C,,,aRO2Form,αRO2Form,,4.29702E-13,0.395835,-582.4,,
+alpha,O=CC(C)C,HO2,,p07_adduct,,,aAdductSplit,αAdductSplit,,1.75E-11,0.35126,0,,
+beta,OCC(C)(C)O[O],,TS10,OCC(C)([CH2])OO,,,b-gQOOHIsom,β-γQOOHIsom,,,,,H-transfer,qooh
+beta,O[CH]C(C)(C)OO,,TS11,CC(C)([O])C=O,H2O,,bH2OForm,βH2OForm,,,,,welz,
+beta,O[CH]C(C)(C)OO,,TS1,CC1(C)OC1O,OH,,bEpoxyFroma,βEpoxyFromα,,,,,cyclic ether,epoxxy
+beta,OCC(C)([CH2])OO,,TS2,CC1(CO)OC1,OH,,bEpoxyFromg,βEpoxyFromγ,,,,,cyclic ether,epoxxy
+beta,OCC(C)([CH2])OO,,TS3,CC(CO)=C,HO2,,bHO2elimFromg,βHO2elimFromγ,,,,,HO2 elim,indirect
+beta,OCC(C)(C)O[O],,TS4,CC(CO)=C,HO2,,b-gHO2elimFromRO2,β-γHO2elimFromRO2,,,,,HO2 elim,direct
+beta,OCC(C)(C)O[O],,TS5,CC(C)=CO,HO2,,b-aHO2elimFromRO2,β-αHO2elimFromRO2,,,,,HO2 elim,direct
+beta,O[CH]C(C)(C)OO,,TS6,CC(C)=CO,HO2,,bHO2elimFroma,βHO2elimFromα,,,,,HO2 elim,indirect
+beta,OCC(C)(C)O[O],,TS7,O[CH]C(C)(C)OO,,,b-aQOOHIsom,β-αQOOHIsom,,,,,H-transfer,qooh
+beta,OCC(C)(C)O[O],,TS8,[O]CC(C)(C)OO,,,bAlkoxyIsom,βAlkoxyIsom,,,,,H-transfer,alkoxy
+beta,[O]CC(C)(C)OO,,TS8c,acetone,formaldehyde,OH,bDoublebscission,βDoubleβscission,,,,,,
+beta,C[C](C)CO,O2,,OCC(C)(C)O[O],,,bRO2Form,βRO2Form,,1.62E-12,0.325,-210,,
+gamma,OCC([CH2])C,O2,,[O]OCC(CO)C,,,gRO2Form,γRO2Form,O2addition,1.14E-07,-1.627,100,,
+gamma,[O]OCC(CO)C,,TSN12,OOCC(C[O])C,,,gAlkoxyIsom,γAlkoxyIsom,isomerizationfromalcohol,,,,H-transfer,alkoxy
+gamma,[O]OCC(CO)C,,TSN07,OOCC([CH]O)C,,,g-aQOOHIsom,γ-αQOOHIsom,6memberedisomerization-alphacarbon,,,,H-transfer,qooh
+gamma,[O]OCC(CO)C,,TSN08,OOCC(CO)[CH2],,,g-gQOOHIsom,γ-γQOOHIsom,6memberedisomerization-methylgroup,,,,H-transfer,qooh
+gamma,[O]OCC(CO)C,,TSN09,OC[C](COO)C,,,g-bQOOHIsom,γ-βQOOHIsom,5memberedisomerization,,,,H-transfer,qooh
+gamma,[O]OCC(CO)C,,TSN05,CC(CO)=C,HO2,,gHO2elimFromRO2,γHO2elimFromRO2,HO2eliminationfromRO2,,,,HO2 elim,direct
+gamma,OC[C](COO)C,,TSN06,CC(CO)=C,HO2,,gHO2elimFromb,γHO2elimFromβ,HO2eliminationfromQOOH,,,,HO2 elim,indirect
+gamma,OOCC([CH]O)C,,TSN01,O=CC(C)C[O],H2O,,gH2OForm,γH2OForm,watereliminationfromalphaalcohol,,,,welz,
+gamma,OOCC([CH]O)C,,TSN02,OC1OCC(C)1,OH,,gC4EtherFroma,γC4EtherFromα,cyclicetherformation-alcoholinsidegroup,,,,cyclic ether,C4
+gamma,OOCC(CO)[CH2],,TSN03,OCC1COC1,OH,,gC4EtherFromg,γC4EtherFromγ,cyclicetherformation-alcoholoutsidering,,,,cyclic ether,C4
+gamma,OC[C](COO)C,,TSN04,CC1(CO)OC1,OH,,gEpoxyFromb,γEpoxyFromβ,cyclicetherformation-3membered,,,,cyclic ether,epoxxy
+gamma,OOCC([CH]O)C,,TSN13,CC=CO,formaldehyde,OH,gDoublebscissionFroma,γDoubleβscissionFromα,beta-scission,,,,bscission,"O-O, C-C"
+gamma,OOCC(CO)[CH2],,TS14,C=CCO,formaldehyde,OH,gDoublebscissionFromg,γDoubleβscissionFromγ,beta-scission,,,,bscission,"O-O, C-C"
+gamma,OOCC(C[O])C,,TS16,formaldehyde,C[CH]COO,,g-bscissionFromAlkoxy,γ-βscissionFromAlkoxy,,,,,,
+gamma,OOCC(C[O])C,,TS20,O=CC(C)CO,OH,,gAlkoxyHabs,γAlkoxyHabs,,,,,,
+gamma,OOCC([CH]O)C,,not_named,O=CC(C)CO,OH,,gAldolFroma,γAldolFromα,,,,,,

@@ -1,0 +1,49 @@
+folder_name,smiles,paper_name,chemkin_name,sarathy,merchant,description
+O2,[O][O],O2,O2,o2,O2,
+HO2,O[O],HO2,HO2,ho2,HO2,
+OH,[OH],OH,OH,oh,OH,
+H,[H],H,H,h,H,
+CH3,[CH3],CH3,CH3,ch3,CH3,
+C[CH]C,C[CH]C,ipropyl,ipropyl,ic3h7,C3H7-2,
+OC1OCC(C)1,OC1OCC(C)1,disub_c4ether,disub_c4ether,ic4h7oho1-3,,
+OOC=O,OOC=O,performic_acid,performic_acid,,sSPC(3121),missing in sarathy bc no QOOH alkoxy
+OOC(O)C=C_bmk,OOC(O)C=C,αOOHβalkene,aOOHbalkene,,,missing in sarathy bc no QOOH alkoxy
+OOC(=O)C(C)C_bmk,OOC(=O)C(C)C,ibut_peroxyacid,ibut_peroxyacid,,,missing in sarathy bc no QOOH alkoxy
+OOC([O])C(C)C_bmk,OOC([O])C(C)C,αQOOH[O],aQOOH[O],,,
+p07_adduct,,αadduct,aadduct,,,
+CC(C)[CH]O,CC(C)[CH]O,αR,aR,ic4h8oh-1,C4H9Oi3,
+C[C](C)CO,C[C](C)CO,βR,bR,ic4h8oh-2,C4H9Oi2,
+OCC([CH2])C,OCC([CH2])C,γR,gR,ic4h8oh-3,C4H9Oi1,
+[O]OC(O)C(C)C,[O]OC(O)C(C)C,αRO2,aRO2,ic4h8oh-1o2,alpha peroxy,
+OCC(C)(C)O[O],OCC(C)(C)O[O],βRO2,bRO2,ic4h8oh-2o2,"beta peroxy, degrades straight to acetone, ch2o, OH instead of going through the alkoxy form",
+[O]OCC(CO)C,[O]OCC(CO)C,γRO2,gRO2,ic4h8oh-3o2,gamma peroxy,
+OOC(O)[C](C)C,OOC(O)[C](C)C,αQOOHβ,aQOOHb,ic4h7oh-1ooh-2,,
+OOC(O)C(C)[CH2]_bmk,OOC(O)C(C)[CH2],αQOOHγ,aQOOHg,ic4h7oh-1ooh-3,,sarathy mechanism rxn not in this work: ic4h7oh-1ooh-3  =  oh+hocho+c3h6
+OCC(C)([CH2])OO,OCC(C)([CH2])OO,βQOOHγ,bQOOHg,ic4h7oh-2ooh-3,,
+O[CH]C(C)(C)OO,O[CH]C(C)(C)OO,βQOOHα,bQOOHa,ic4h7oh-2ooh-1,,
+OOCC([CH]O)C,OOCC([CH]O)C,γQOOHα,gQOOHa,ic4h7oh-3ooh-1,,
+OC[C](COO)C,OC[C](COO)C,γQOOHβ,gQOOHb,ic4h7oh-3ooh-2,,
+OOCC(CO)[CH2],OOCC(CO)[CH2],γQOOHγ,gQOOHg,ic4h7oh-3ooh-3,,missing reaction: ic4h7oh-3ooh-3  =  oh+ch2o+c3h5oh
+O=CC(C)C,O=CC(C)C,ibutanal,ibutanal,ic3h6choh,,
+CC(C)([O])C=O,CC(C)([O])C=O,βalkoxyketone,balkoxyketone,,C4H8O-i3,missing in sarathy bc no water formation pathway
+H2O,O,H2O,H2O,h2o,,
+CC1(C)OC1O,CC1(C)OC1O,trisub_epoxy,trisub_epoxy,ic4h7oho1-2,,duplicate from beta surface (kept this one)
+CC1(CO)OC1,CC1(CO)OC1,disub_epoxy,disub_epoxy,ic4h7oho2-3,,
+CC(CO)=C,CC(CO)=C,γalkene,galkene,ic3h5ch2oh,C4H8O-i1,on gamma surface
+[O]CC(C)(C)OO,[O]CC(C)(C)OO,βQOOH[O],bQOOH[O],,,
+CC(C)=CO,CC(C)=CO,ibutenol,ibutenol,ic3h6choh,C4H8O-i2,
+acetone,CC(=O)C,acetone,acetone,ch3coch3,,
+[CH2]OO,[CH2]OO,[CH2]OO,[CH2]OO,sarathy represents by CH2O + OH,,
+O[CH]OO,O[CH]OO,O[CH]OO,O[CH]OO,sarathy represents by formic acid + OH,,
+formaldehyde,C=O,CH2O,CH2O,ch2o,,
+OOCC(C[O])C,OOCC(C[O])C,γQOOH[O],gQOOH[O],,,
+O=CC(C)CO,O=CC(C)CO,γaldol,galdol,,,
+O=CC(C)C[O],O=CC(C)C[O],γaldoxy,galdoxy,,,
+OCC1COC1,OCC1COC1,monosub_c4ether,monosub_c4ether,ic4h7oho3-3,,
+CC=CO,CC=CO,propene1ol,propene1ol,c3h5oh,,sarathy does not differentiate between C=CCO and CC=CO
+CC=C,CC=C,propene,propene,c3h6,,
+OC=O,OC=O,formic_acid,formic_acid,hocho,,
+C=CCO,C=CCO,propene3ol,propene3ol,c3h5oh,,sarathy does not differentiate between C=CCO and CC=CO
+C[CH]COO,C[CH]COO,ipropylOOH,ipropylOOH,,,
+C[C](C)OO_not_used,C[C](C)OO_not_used,βHOOipropyl,bHOOipropyl,,,
+CC(CO)[CH]OO,CC(CO)[CH]OO,γQOOHγ_2,gQOOHg_2,,,
