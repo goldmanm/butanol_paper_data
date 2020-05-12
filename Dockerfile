@@ -1,9 +1,9 @@
 #This is a sample Image 
 FROM continuumio/miniconda3
-RUN apt install git\
-                gcc\
-                g++\
-                make
+RUN apt install -y git\
+                   gcc\
+                   g++\
+                   make
 
 
 RUN git clone https://www.github.com/goldmanm/butanol_paper_data.git /home/paper_repo
