@@ -61,7 +61,7 @@ dependencies:
   - gst-plugins-base=1.14.0=hbbd80ab_1
   - gstreamer=1.14.0=hb453b48_1
   - gunicorn=19.9.0=py37_0
-  - h5py=2.9.0=py37h7918eee_0
+  - h5py=2.9.0
   - harfbuzz=1.8.8=hffaf4a1_0
   - hdf5=1.10.4=hb1b8bf9_0
   - hyperopt=0.1.2=py_0
