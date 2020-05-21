@@ -36,7 +36,7 @@ Various methods exist within the code repository. They are described below:
 A file `Dockerfile` contains instructions to generate an image with all the dependencies. The instructions here work on Ubuntu 20.04, but can work on other linux distributions. On the linux terminal, build the docker image with 
 
 ```
-docker build -t butanol
+docker build . -t butanol
 ```
 
 You can then create a container from the image and then launch a terminal session with it
@@ -45,13 +45,10 @@ You can then create a container from the image and then launch a terminal sessio
 docker container run -it butanol
 ```
 
-
-
-
-Once this is installed and built, you can rerun the generation of pressure-dependent kinetics with:
+You can rerun the generation of pressure-dependent kinetics with:
 
 ```
-cd /home/butanol_repo/code
+cd /home/paper_repo/code
 ./create_mechanism.sh
 ```
 
