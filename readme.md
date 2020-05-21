@@ -42,7 +42,7 @@ docker build . -t butanol
 You can then create a container from the image and then launch a terminal session with it
 
 ```
-docker container run -it butanol
+docker container run -it -p 8888:8888 butanol
 ```
 
 You can rerun the generation of pressure-dependent kinetics with:
@@ -55,13 +55,7 @@ cd /home/paper_repo/code
 While in the container, the Jupyter notebooks can be opened with the commands
 
 ```
-jupyter notebook
+jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
 ```
 
-or
-
-```
-jupyter lab
-```
-
-You can run each of the notebooks individually from the Jupyter notebook framework.
+You can view the notebook in your browser with the URL `localhost:8888/tree‌​`.
