@@ -14,7 +14,8 @@ species2paper_name = pd.Series(index=species_conversion_df['folder_name'],data=s
 
 for network_name in ['alpha','beta','gamma','all']:
     base_folder = os.path.join('../data/mech_generation/',network_name)
-    os.mkdirs(base_folder)
+    if not os.path.isdir(base_folder):
+        os.makedirs(base_folder)
     pdep_string = ''
     high_p_string = ''
     thermo_string = ''
@@ -31,7 +32,7 @@ for network_name in ['alpha','beta','gamma','all']:
     temp_string = '''
 # coding=utf8
 
-modelChemistry = 'CCSD(T)-F12/cc-pVTZ-F12'
+modelChemistry = 'CCSD(T)-F12/cc-pVTZ-F12//B3LYP/CBSB7'
 useHinderedRotors = True
 '''
     pdep_string += temp_string
@@ -47,14 +48,14 @@ useHinderedRotors = True
         # hack to get the hydrogen bonded adduct properly
         if isinstance(species2smiles[s],str) or isinstance(species2smiles[s], str):
             temp_string = u"""
-species('{1}','../../quantum/species/{1}/{0}.py',
+species('{1}','../../quantum/species/{1}/species.py',
     structure = SMILES('{2}'),
     energyTransferModel = SingleExponentialDown(alpha0=(250,'cm^-1'), T0=(300,'K'), n=0.85),  #From Antonov 2016 for butanol in helium.
     collisionModel = TransportData(sigma=(4.63691,'angstrom'), epsilon=(318.27557,'cm^-1')),)
 """.format(s,species2paper_name[s], species2smiles[s])
         else:
             temp_string = u"""
-species('{1}','../../quantum/species/{1}/{0}.py',
+species('{1}','../../quantum/species/{1}/species.py',
     structure = SMILES('OC(O)C(O)C[CH2]'),
     molecularWeight = (105.11, 'g/mol'),
     energyTransferModel = SingleExponentialDown(alpha0=(250,'cm^-1'), T0=(300,'K'), n=0.85),    #From Antonov 2016 for butanol in helium.
@@ -191,12 +192,10 @@ Tmin = (180,'K'), Tmax = (1500,'K'), Tcount = 20,
 """.format(reactions.loc[reaction_num,'ascii_name'])
 
     # write the files
-    if network_name == 'all':
-        with open(os.path.join(base_folder,'cantherm_high_p_input.py'),'w') as f:
-            f.write(high_p_string)
-        with open(os.path.join(base_folder,'cantherm_thermo_input.py'),'w') as f:
-            f.write(thermo_string)
-    else:
-        with open(os.path.join(base_folder,'cantherm_pdep_input.py'),'w') as f:
-            f.write(pdep_string)
+    with open(os.path.join(base_folder,'cantherm_high_p_input.py'),'w') as f:
+        f.write(high_p_string)
+    with open(os.path.join(base_folder,'cantherm_thermo_input.py'),'w') as f:
+        f.write(thermo_string)
+    with open(os.path.join(base_folder,'cantherm_pdep_input.py'),'w') as f:
+        f.write(pdep_string)
 
