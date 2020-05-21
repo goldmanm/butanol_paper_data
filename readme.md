@@ -55,7 +55,7 @@ cd /home/paper_repo/code
 While in the container, the Jupyter notebooks can be opened with the commands
 
 ```
-jupyter notebook --ip 0.0.0.0 --no-browser --allow-root
+jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --allow-root
 ```
 
-You can view the notebook in your browser with the URL `localhost:8888/tree‌​`.
+You can view the notebook in your browser with the URL `localhost:8888`.
