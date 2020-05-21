@@ -27,14 +27,11 @@ cd ../pdep_merged
 python /home/RMG-Py/scripts/mergeModels.py --model1 ../alpha/cantherm_output/chem.inp ../all/cantherm_output_thermo/species_dictionary.txt --model2 ../beta/cantherm_output/chem.inp ../all/cantherm_output_thermo/species_dictionary.txt --model3 ../gamma/cantherm_output/chem.inp ../all/cantherm_output_thermo/species_dictionary.txt --model4 ../all/cantherm_output_thermo/chem.inp ../all/cantherm_output_thermo/species_dictionary.txt
 
 echo "****** Adding thermo to high p model"
-mkdir -p ../../high_p_merged
-cd ../../high_p_merged
+mkdir -p ../high_p_merged
+cd ../high_p_merged
 python /home/RMG-Py/scripts/mergeModels.py --model1 ../all/cantherm_output_thermo/chem.inp ../all/cantherm_output_thermo/species_dictionary.txt --model2 ../all/cantherm_output_high_p/chem.inp ../all/cantherm_output_thermo/species_dictionary.txt
 
 echo "****** Creating cantera files"
 ck2cti --input chem.inp --output chem.cti
 cd ../pdep_merged
 ck2cti --input chem.inp --output chem.cti
-cd with_second_O2
-ck2cti --input chem.inp --output chem.cti
-
