@@ -4,7 +4,7 @@ The goal of this repository is to help others reproduce and build off of our wor
 
 # Required dependendencies
 
-A file called environment.txt contains the list of python packages that were used in the generation of the methods, and the `conda` command can be used to generate an environment from this. In addition to this, you will need versions of [RMG-Py]() and [RMG-database](). The version of RMG contains additional file changes not available in the main RMG releases, which allow for longer names of molecules and storage of intemediate pressure-dependent values. Using a released version of RMG will not have this extra functionality.
+A file called environment.txt contains the list of python packages that were used in the generation of the methods, and the `conda` command can be used to generate an environment from this. In addition to this, you will need versions of [RMG-Py](https://github.com/goldmanm/RMG-Py/tree/64374493bdf8cab36d3ed7ca815c71c76a13fe73) and [RMG-database](https://github.com/ReactionMechanismGenerator/RMG-database/tree/d626e2bd535faf1cb4c3c1618cfff8ad1bbe3dd9). The version of RMG contains additional file changes not available in the main RMG releases, which allow for longer names of molecules and storage of intemediate pressure-dependent values. Using a released version of RMG will not have this extra functionality.
 
 These calculations were done on Ubuntu 18.04, though other Unix-based OS's might also work.
 
@@ -22,7 +22,7 @@ The structure of the folders in this repository are as followed:
 
 Various methods exist within the code repository. They are described below:
 
-* **compare_mechanism.sh**-a bash script for generating the thermo and kinetics from quantum files uing RMG
+* **create_mechanism.sh**-a bash script for generating the thermo and kinetics from quantum files uing RMG
 * **make_network_input_files.py**-a helper method for `compare_mechanism.sh` which generated Arkane input files
 * **simulate_pdep_fate.ipynb**-a jupyter notebook with code for generating the major pressure dependent products at various temperatures and pressures (can use without generating new kinetics)
 * **visualize_pdep_vars.ipynb**-a jupyter notebook with code for generating data from microcanonical rates (must run Arkane calculations to use)
@@ -31,3 +31,40 @@ Various methods exist within the code repository. They are described below:
 * **get_zador_arrhenius.ipynb**-a jupyter notebook with code for generated modified Arrhenius from published data
 * **get_collision_limit_ho2_adduct.ipynb**-a jupyter notebook with code to estimate the collision limited rate for HO2 and isobutanal
 
+# building using Docker
+
+A file `Dockerfile` contains instructions to generate an image with all the dependencies. The instructions here work on Ubuntu 20.04, but can work on other linux distributions. On the linux terminal, build the docker image with 
+
+```
+docker build -t butanol
+```
+
+You can then create a container from the image and then launch a terminal session with it
+
+```
+docker container run -it butanol
+```
+
+
+
+
+Once this is installed and built, you can rerun the generation of pressure-dependent kinetics with:
+
+```
+cd /home/butanol_repo/code
+./create_mechanism.sh
+```
+
+While in the container, the Jupyter notebooks can be opened with the commands
+
+```
+jupyter notebook
+```
+
+or
+
+```
+jupyter lab
+```
+
+You can run each of the notebooks individually from the Jupyter notebook framework.
