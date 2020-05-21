@@ -11,4 +11,4 @@ energy = {
 frequencies = GaussianLog('TS11freq.log')
 
 rotors = [HinderedRotor(scanLog=ScanLog('scan_0.log'), pivots=[2,3], top=[3,4,5,6], symmetry=3),
-          HinderedRotor(scanLog=ScanLog('scan_2.log'), pivots=[2,9], top=[9,10,11,12], symmetry=3)]
+          HinderedRotor(scanLog=ScanLog('scan_1.log'), pivots=[2,9], top=[9,10,11,12], symmetry=3)]
