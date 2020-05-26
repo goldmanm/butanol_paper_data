@@ -1,12 +1,6 @@
 This repository contains data and code to accompany "Pressure-dependent kinetics of isobutanol peroxy isomers" by Mark Jacob Goldman, Nathan Wa-Wai Lee, Jesse H Kroll, William H Green.
 
-The goal of this repository is to help others reproduce and build off of our work. This readme is organized into a few sections.
-
-# Required dependendencies
-
-A file called environment.txt contains the list of python packages that were used in the generation of the methods, and the `conda` command can be used to generate an environment from this. In addition to this, you will need versions of [RMG-Py](https://github.com/goldmanm/RMG-Py/tree/64374493bdf8cab36d3ed7ca815c71c76a13fe73) and [RMG-database](https://github.com/ReactionMechanismGenerator/RMG-database/tree/d626e2bd535faf1cb4c3c1618cfff8ad1bbe3dd9). The version of RMG contains additional file changes not available in the main RMG releases, which allow for longer names of molecules and storage of intemediate pressure-dependent values. Using a released version of RMG will not have this extra functionality.
-
-These calculations were done on Ubuntu 18.04, though other Unix-based OS's might also work.
+The goal of this repository is to help others reproduce and build off of our work. Docker is the recommended way to replicate the calculations, though you can also replicate without docker on linux devices.
 
 # Structure of database
 
@@ -20,7 +14,7 @@ The structure of the folders in this repository are as followed:
 
 # Code
 
-Various methods exist within the code repository. They are described below:
+Various files exist within the code repository. They are described below:
 
 * **create_mechanism.sh**-a bash script for generating the thermo and kinetics from quantum files uing RMG
 * **make_network_input_files.py**-a helper method for `compare_mechanism.sh` which generated Arkane input files
@@ -31,31 +25,36 @@ Various methods exist within the code repository. They are described below:
 * **get_zador_arrhenius.ipynb**-a jupyter notebook with code for generated modified Arrhenius from published data
 * **get_collision_limit_ho2_adduct.ipynb**-a jupyter notebook with code to estimate the collision limited rate for HO2 and isobutanal
 
-# building using Docker
+# Building using Docker
 
-A file `Dockerfile` contains instructions to generate an image with all the dependencies. The instructions here work on Ubuntu 20.04, but can work on other linux distributions. On the linux terminal, build the docker image with 
+A file `Dockerfile` contains instructions to generate an image with all the dependencies for simulating the results of the model. The instructions here were tested on Ubuntu 18.04 and Ubuntu 20.04, but will likely work on other linux distributions and operating systems. The instructions below reference unix terminal commands to generate the image and complete the calculations. You will first have to install the docker package. Once that is installed, build the docker image with 
 
 ```
 docker build . -t butanol
 ```
 
-You can then create a container from the image and then launch a terminal session with it
+You can then create a container from the image and then launch a terminal session with it.
 
 ```
 docker container run -it -p 8888:8888 butanol
 ```
 
-You can rerun the generation of pressure-dependent kinetics with:
+If desired, rerun the generation of high-pressure-limit and pressure-dependent kinetics with:
 
 ```
 cd /home/paper_repo/code
 ./create_mechanism.sh
 ```
 
-While in the container, the Jupyter notebooks can be opened with the commands
+To access jupyter notebooks inside the container, create and run the server with
 
 ```
 jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --allow-root
 ```
 
-You can view the notebook in your browser with the URL `localhost:8888`.
+You can view the notebook in your web browser on the same device as the container with the URL `localhost:8888`.
+
+# Required dependendencies
+
+A file called environment.yml contains the list of python packages that were used in the generation of the methods, and the `conda` command can be used to generate an environment from this. In addition to this, you will need versions of [RMG-Py](https://github.com/goldmanm/RMG-Py/tree/64374493bdf8cab36d3ed7ca815c71c76a13fe73) and [RMG-database](https://github.com/ReactionMechanismGenerator/RMG-database/tree/d626e2bd535faf1cb4c3c1618cfff8ad1bbe3dd9). The version of RMG contains additional file changes not available in the main RMG releases, which allow for longer names of molecules and storage of intemediate pressure-dependent values. Using a released version of RMG will not have this extra functionality.
+
